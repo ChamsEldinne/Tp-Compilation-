@@ -1,0 +1,8 @@
+1. Définir la grammaire
+Tu peux commencer par définir les règles de grammaire de ton langage. Par exemple, ta grammaire pourrait inclure:
+
+Déclarations de variables : int x;
+
+Conditions : if (x > 0) { ... } else { ... }
+
+Boucles : for (int i = 0; i < 10; i++) { ... } et while (x < 10) { ... }
