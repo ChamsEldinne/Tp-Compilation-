@@ -1,0 +1,75 @@
+ (function () {
+    "use strict";
+
+function fillForm() {
+
+    //click ok on the pop up component
+    function clickOkPopUp(){
+        document.querySelectorAll("button[type='button']")[2].click()
+    }
+     
+    
+    clickOkPopUp() ;
+
+    // Function to select a location from the Kendo dropdown
+    function selectKendoLocation(locationText) {
+        // Find the Kendo dropdown widget
+        const dropdownElement = $("#LocationId").data("kendoDropDownList");
+
+        if (dropdownElement) {
+        // Set the value based on the text of the location
+        dropdownElement.text(locationText);
+
+        // Trigger the change event if necessary
+        dropdownElement.trigger("change");
+        } else {
+        console.log("Kendo dropdown element not found.");
+        }
+    }
+
+    var firstName = "John";
+    var lastName = "Doe";
+    var email = "example@example.com";
+    var mobileNo = "1234567890";
+    var city = "New York";
+    var locationText = "Oran";
+
+    var firstNameInput = document.querySelector("#FirstName"); 
+    var lastNameInput = document.querySelector("#LastName"); 
+    var emailInput = document.querySelector("#Email"); 
+    var mobileNoInput = document.querySelector("#Mobile");
+    var cityInput = document.querySelector("#City"); 
+    var submitButton = document.querySelector("#btnSubmit"); 
+
+    if (
+        firstNameInput &&
+        lastNameInput &&
+        emailInput &&
+        mobileNoInput &&
+        cityInput  &&
+        submitButton
+    ) {
+        setTimeout(()=>{
+            firstNameInput.value = firstName;
+            lastNameInput.value = lastName;
+            emailInput.value = email;
+            mobileNoInput.value = mobileNo;
+            cityInput.value = city;
+            selectKendoLocation(locationText);
+        },2000)
+ 
+        setTimeout( ()=>{ 
+            submitButton.click();
+        }, 15000);
+
+    }else{
+
+        console.log("somthing wornge this auto fill will not be working") ;
+    
+    }
+
+}
+   
+fillForm()
+
+})();
